@@ -11,7 +11,34 @@
     pre {
       font-family: Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace;
       white-space: pre; 
+      background: linear-gradient(
+  		  to right,
+        red,
+    		orange,
+    		yellow,
+    		green,
+    		blue,
+    		indigo,
+    		violet,
+    		red
+	    );
+    	background-clip: text;
+    	-webkit-background-clip: text;
+    	color: transparent;
+    	-webkit-text-stroke: 5px transparent;
+    	-webkit-text-fill-color: white;
+    	animation: rainbow 4s linear 0s alternate-reverse infinite;
     }
+
+  @keyframes rainbow2 {
+  	0% {
+  		background-position: 0 0;
+  	}
+  
+  	100% {
+  		background-position: 700px 0;
+  	}
+} 
   </style>
 </head>
 <body>
