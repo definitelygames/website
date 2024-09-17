@@ -39,11 +39,12 @@ const MailchimpForm = ({ className, onSuccess }: FormProps) => {
 
 		const formData = new FormData()
 		formData.append("EMAIL", email)
+		formData.append("b_b8ceb76496f682016133b8e5e_ffc17f3258", "")
 
 		try {
 			setPending(true)
 			await fetch(
-				"https://games.us8.list-manage.com/subscribe/post?u=b8ceb76496f682016133b8e5e&id=ffc17f3258",
+				"https://games.us8.list-manage.com/subscribe/post?u=b8ceb76496f682016133b8e5e&id=ffc17f3258&f_id=005c7ce0f0",
 				{
 					method: "POST",
 					body: formData,
