@@ -1,0 +1,21 @@
+{
+	"files.exclude": {
+		"**/.next": true,
+		"**/node_modules": true
+	},
+	"editor.tabSize": 2,
+	"[typescriptreact]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[typescript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"editor.formatOnSave": true,
+	"editor.formatOnPaste": true,
+	"prettier.useTabs": true,
+	"prettier.tabWidth": 2,
+	"editor.codeActionsOnSave": {
+		"source.organizeImports": "never"
+	},
+	"prettier.prettierPath": "./node_modules/prettier/index.cjs"
+}
