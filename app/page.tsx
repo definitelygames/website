@@ -1,5 +1,5 @@
 "use client"
-import { CSSProperties, useEffect, useMemo, useState } from "react"
+import { CSSProperties, useEffect, useState } from "react"
 import DefViz from "./components/DefViz"
 import EmailSignup from "./components/EmailSignup"
 import SocialIcons from "./components/SocialIcons"

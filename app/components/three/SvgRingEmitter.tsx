@@ -4,7 +4,7 @@ import { extend, useLoader } from "@react-three/fiber"
 import { SVGLoader } from "three/examples/jsm/loaders/SVGLoader.js"
 import { MeshLineGeometry, MeshLineMaterial, MeshLineMaterialParameters } from "meshline"
 import EmitMeshlines from "./EmitMeshlines"
-import { BufferGeometry, Shape, Vector3 } from "three"
+import { BufferGeometry, Vector3 } from "three"
 import { useEffect, useState } from "react"
 import { useBreakpoint } from "@/app/hooks/useBreakpoint"
 
