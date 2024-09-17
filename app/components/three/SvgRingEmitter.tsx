@@ -25,6 +25,7 @@ interface SvgParams {
 	rotation?: number
 	scale?: number
 }
+
 export const SvgRingEmitter = ({ url, rotation, scale }: SvgParams) => {
 	const svgData = useLoader(SVGLoader, url)
 	const [meshPoints, setMeshPoints] = useState<Vector3[]>()
@@ -44,7 +45,6 @@ export const SvgRingEmitter = ({ url, rotation, scale }: SvgParams) => {
 		// Extract points from the shape
 		const points = shape.getPoints()
 
-		// Rotate the points by 90 degrees (π/2 radians) around the origin
 		points.forEach((point) => {
 			const x = point.x
 			const y = point.y

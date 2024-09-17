@@ -4,7 +4,7 @@
 
 :root {
   --primary: #FF4F4F;
-  --primary-alt: rgba(255, 79, 79, 0.5);
+  --primary-alt: rgba(255, 79, 79, 0.4);
   --foreground: #FF4F4F;
 
   --background: #1B0086;
@@ -28,6 +28,10 @@ html,body {
 
 input {
   @apply font-sans text-primary bg-secondary placeholder-primary-alt border-0 outline-none;
+}
+
+.link {
+  @apply text-primary border-b border-b-primary-alt transition-all hover:text-white hover:border-b-white;
 }
 
 @layer utilities {
