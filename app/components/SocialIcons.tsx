@@ -11,7 +11,8 @@ import {
 } from "react-icons/fa6"
 
 export default function SocialIcons({ className }: { className?: string }) {
-	const iconClassName = "h-6 w-6 transition-all ease-out group-hover:-translate-y-1 group-hover:text-white"
+	const iconClassName =
+		"h-6 w-6 transition-all ease-out group-hover:-translate-y-1 group-hover:text-white cursor-pointer"
 	return (
 		<div className={classNames("grid grid-cols-3 space-x-0 md:flex md:flex-row", className)}>
 			<Link href="https://x.com/defgames" target="_blank" className="group relative w-10 p-2">
