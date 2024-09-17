@@ -1,9 +1,7 @@
-import { useFormState, useFormStatus } from "react-dom"
-import classNames from "../lib/classNames"
 import Image from "next/image"
+import { FormEvent, useState } from "react"
 import arrow from "../images/right-arrow.svg"
-import { FormEvent, FormHTMLAttributes, useState } from "react"
-import { on } from "events"
+import classNames from "../lib/classNames"
 
 interface Props {
 	className?: string
@@ -14,13 +12,14 @@ export default function EmailSignup({ className }: Props) {
 	function onSuccess() {
 		setCopy("Thank you! 👻")
 	}
+
 	return (
 		<div
 			className={classNames(
 				"flex flex-col space-y-2 border-b border-primary pb-2 md:flex-row md:space-x-7 md:space-y-0",
 				className,
 			)}>
-			<div className="whitespace-nowrap md:w-1/3">{copy}</div>
+			<div className="whitespace-nowrap md:w-36">{copy}</div>
 			<MailchimpForm className="flex-1" onSuccess={onSuccess} />
 		</div>
 	)
@@ -43,7 +42,7 @@ const MailchimpForm = ({ className, onSuccess }: FormProps) => {
 
 		try {
 			setPending(true)
-			const response = await fetch(
+			await fetch(
 				"https://games.us8.list-manage.com/subscribe/post?u=b8ceb76496f682016133b8e5e&id=ffc17f3258",
 				{
 					method: "POST",
