@@ -13,9 +13,9 @@
 <stop offset="0.433854" stop-color="#1B0086" stop-opacity="0"/>
 <stop offset="1" stop-color="#1B0086" stop-opacity="0.5"/>
 </linearGradient>
-<radialGradient id="paint2_radial_347_909" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(622.342 334.075) rotate(138.622) scale(405.905 610.057)">
-<stop stop-color="#1B0086"/>
-<stop offset="0.572652" stop-color="#1B0086" stop-opacity="0"/>
+<radialGradient id="paint2_radial_347_909" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(622.342 334.075) rotate(55.0483) scale(278.691 418.861)">
+<stop stop-color="#1B0086" stop-opacity="0.7"/>
+<stop offset="0.547341" stop-color="#1B0086" stop-opacity="0"/>
 </radialGradient>
 <clipPath id="clip0_347_909">
 <rect width="1173" height="644" fill="white"/>
