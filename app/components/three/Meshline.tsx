@@ -13,10 +13,16 @@ interface Props {
 export default function Meshline({ points, time }: Props) {
 	const mousePos = useMousePosition()
 	const [mouseFactor, setMouseFactor] = useState<MousePos>({ x: 0.5, y: 0.5 })
+	const [fadeInFactor, setFadeInFactor] = useState(0)
 	const isSmallScreen = !useBreakpoint("sm")
 	const isWindowFocused = useWindowFocus()
 
 	useFrame(() => {
+		// Fade in the lines
+		if (fadeInFactor < 1) {
+			setFadeInFactor((prev) => prev + 0.02)
+		}
+
 		if (isSmallScreen) {
 			setMouseFactor({ x: 0.5, y: 0.5 })
 			return
@@ -60,7 +66,7 @@ export default function Meshline({ points, time }: Props) {
 	distanceFactor = 1 - Math.pow(1 - distanceFactor, 2) * 1.6
 
 	// lerp color based on how close to 0,0 the point is
-	const color = interpolateColor("#1B0086", "#FF4F4F", distanceFactor)
+	const color = interpolateColor("#1B0086", "#FF4F4F", distanceFactor * fadeInFactor)
 
 	// var texture = useTexture("/Group.png")
 	const { size } = useThree()

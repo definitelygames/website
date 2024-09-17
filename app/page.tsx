@@ -11,6 +11,7 @@ import StructuredSchema from "./components/StructuredSchema"
 export default function Home() {
 	const [ref, dimensions] = useResizeObserver()
 	const [styles, setStyles] = useState<CSSProperties>()
+	const [classes, setClasses] = useState<string>("opacity-0")
 
 	useEffect(() => {
 		// shitty hack for very wide and short screen sizes
@@ -18,6 +19,7 @@ export default function Home() {
 		const windowAspect = window.innerWidth / window.innerHeight
 		const divWidth = window.innerHeight * (1252 / 900)
 		const padding = window.innerWidth - divWidth
+
 		if (windowAspect > 1.7) {
 			setStyles({
 				paddingLeft: `${padding / 2}px`,
@@ -26,6 +28,7 @@ export default function Home() {
 		} else {
 			setStyles({})
 		}
+		setClasses("opacity-100")
 	}, [dimensions])
 
 	return (
@@ -34,7 +37,8 @@ export default function Home() {
 			<div
 				ref={ref}
 				className={classNames(
-					"mx-auto flex w-full flex-col place-content-center space-y-8 px-6 pb-8 md:h-screen md:px-14 md:pb-0",
+					"mx-auto flex w-full flex-col place-content-center space-y-8 px-6 pb-8 transition-opacity duration-75 md:h-screen md:px-14 md:pb-0",
+					classes,
 				)}
 				style={styles}>
 				<div className="relative z-10 flex flex-row">
