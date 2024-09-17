@@ -17,19 +17,19 @@ export default function Meshline({
 		return new CatmullRomCurve3(adjustedPoints, false).getPoints(200).flatMap((point) => point.toArray())
 	}, [points, baseOffset, time])
 
-	var pointSample = points[0]
+	const pointSample = points[0]
 
-	var distanceFromCenter = Math.sqrt(pointSample.x ** 2 + pointSample.y ** 2)
+	const distanceFromCenter = Math.sqrt(pointSample.x ** 2 + pointSample.y ** 2)
 
-	var range = 250
-	var distanceFactor = distanceFromCenter / range
+	const range = 250
+	let distanceFactor = distanceFromCenter / range
 	distanceFactor = Math.max(0, Math.min(1, distanceFactor))
 
 	// ease out the distance factor
 	distanceFactor = 1 - Math.pow(1 - distanceFactor, 2) * 1.6
 
 	// lerp color based on how close to 0,0 the point is
-	var color = interpolateColor("#1B0086", "#FF4F4F", distanceFactor)
+	const color = interpolateColor("#1B0086", "#FF4F4F", distanceFactor)
 
 	// var texture = useTexture("/Group.png")
 	const { size } = useThree()

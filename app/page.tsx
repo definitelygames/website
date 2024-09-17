@@ -17,7 +17,7 @@ export default function Home() {
 		// probably could do this in css but I'm lazy
 		const windowAspect = window.innerWidth / window.innerHeight
 		const divWidth = window.innerHeight * (1252 / 900)
-		var padding = window.innerWidth - divWidth
+		const padding = window.innerWidth - divWidth
 		if (windowAspect > 1.7) {
 			setStyles({
 				paddingLeft: `${padding / 2}px`,

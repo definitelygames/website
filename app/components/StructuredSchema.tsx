@@ -38,6 +38,7 @@ export default function StructuredSchema() {
 	return (
 		<>
 			<Script
+				id="website-schema"
 				type="application/ld+json"
 				dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
 				strategy="beforeInteractive"
