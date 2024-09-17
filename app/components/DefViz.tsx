@@ -17,11 +17,11 @@ const DefViz = React.forwardRef<HTMLDivElement, Props>(({ className }, ref) => {
 		<div
 			ref={ref}
 			className={classNames(
-				"aspect-def-portrait relative z-0 mx-auto w-full overflow-hidden md:aspect-def md:overflow-visible",
+				"relative z-0 mx-auto aspect-def-portrait w-full overflow-hidden md:aspect-def md:overflow-visible",
 				className,
 			)}>
 			<div className="t-0 absolute z-30 m-4 flex w-2/5 flex-col space-y-2 md:m-8 md:w-[15%]">
-				<Image src={defgames} alt="Definitely Games" className="w-full" draggable={false} />
+				<Image src={defgames} alt="Definitely Games" className="w-full" draggable={false} priority />
 				<Tagline className="text-md leading-6 md:hidden" />
 			</div>
 			<Image
@@ -39,7 +39,7 @@ const DefViz = React.forwardRef<HTMLDivElement, Props>(({ className }, ref) => {
 			<Image
 				src={defsubtract}
 				alt="DEF"
-				className="aspect-def-portrait absolute top-0 z-10 w-full rotate-90 scale-[1.915] md:aspect-def md:rotate-0 md:scale-[1.005]"
+				className="absolute top-0 z-10 aspect-def-portrait w-full rotate-90 scale-[1.915] md:aspect-def md:rotate-0 md:scale-[1.005]"
 				draggable={false}
 			/>
 			<Visualizer />

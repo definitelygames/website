@@ -6,6 +6,7 @@ import SocialIcons from "./components/SocialIcons"
 import Tagline from "./components/Tagline"
 import useResizeObserver from "./hooks/useResizeObserver"
 import classNames from "./lib/classNames"
+import StructuredSchema from "./components/StructuredSchema"
 
 export default function Home() {
 	const [ref, dimensions] = useResizeObserver()
@@ -28,25 +29,28 @@ export default function Home() {
 	}, [dimensions])
 
 	return (
-		<div
-			ref={ref}
-			className={classNames(
-				"mx-auto flex w-full max-w-[120rem] flex-col place-content-center space-y-8 px-6 pb-8 md:h-screen md:px-14 md:pb-0",
-			)}
-			style={styles}>
-			<div className="relative z-10 flex flex-row">
-				<div className="flex-1"></div>
-				<EmailSignup className="hidden w-[66%] md:inline-flex lg:w-[31.5%]" />
-			</div>
+		<>
+			<StructuredSchema />
+			<div
+				ref={ref}
+				className={classNames(
+					"mx-auto flex w-full max-w-[120rem] flex-col place-content-center space-y-8 px-6 pb-8 md:h-screen md:px-14 md:pb-0",
+				)}
+				style={styles}>
+				<div className="relative z-10 flex flex-row">
+					<div className="flex-1"></div>
+					<EmailSignup className="hidden w-[66%] md:inline-flex lg:w-[31.5%]" />
+				</div>
 
-			<DefViz />
+				<DefViz />
 
-			<div className="relative z-10 flex flex-row place-items-center">
-				<Tagline className="hidden w-2/3 md:block" />
-				<EmailSignup className="w-1/2 md:hidden" />
-				<div className="flex-1 md:hidden"></div>
-				<SocialIcons className="w-28 place-content-end md:w-full" />
+				<div className="relative z-10 flex flex-row place-items-center">
+					<Tagline className="hidden w-2/3 md:block" />
+					<EmailSignup className="w-1/2 md:hidden" />
+					<div className="flex-1 md:hidden"></div>
+					<SocialIcons className="w-28 place-content-end md:w-full" />
+				</div>
 			</div>
-		</div>
+		</>
 	)
 }

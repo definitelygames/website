@@ -72,7 +72,6 @@ const MailchimpForm = ({ className, onSuccess }: FormProps) => {
 				onChange={(e) => setEmail(e.target.value)}
 				placeholder="you@email.rizz"
 				className={classNames("w-full transition-opacity", pending ? "opacity-50" : "")}
-				autoFocus
 				required
 			/>
 			<button type="submit">
