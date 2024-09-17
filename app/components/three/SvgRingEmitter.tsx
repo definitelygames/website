@@ -30,7 +30,7 @@ export const SvgRingEmitter = ({ url, rotation, scale }: SvgParams) => {
 	const [meshPoints, setMeshPoints] = useState<Vector3[]>()
 	const [spacing, setSpacing] = useState<number>(0)
 	const [count, setCount] = useState<number>(0)
-	const smallScreen = !useBreakpoint("sm")
+	const isSmallScreen = !useBreakpoint("sm")
 
 	scale ??= 1
 
@@ -86,14 +86,14 @@ export const SvgRingEmitter = ({ url, rotation, scale }: SvgParams) => {
 		// Force reset the lines when we adjust the spacing
 		if (spacing > 0) setMeshPoints(undefined)
 
-		if (smallScreen) {
+		if (isSmallScreen) {
 			setSpacing(10)
 			setCount(85)
 		} else {
 			setSpacing(12)
 			setCount(85)
 		}
-	}, [smallScreen])
+	}, [isSmallScreen])
 
 	return <>{meshPoints && <EmitMeshlines points={meshPoints} baseSpacing={spacing} count={count} />}</>
 }
