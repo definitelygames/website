@@ -34,7 +34,7 @@ export default function Home() {
 			<div
 				ref={ref}
 				className={classNames(
-					"mx-auto flex w-full max-w-[120rem] flex-col place-content-center space-y-8 px-6 pb-8 md:h-screen md:px-14 md:pb-0",
+					"mx-auto flex w-full flex-col place-content-center space-y-8 px-6 pb-8 md:h-screen md:px-14 md:pb-0",
 				)}
 				style={styles}>
 				<div className="relative z-10 flex flex-row">
