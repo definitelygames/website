@@ -1,4 +1,4 @@
-export const TWITTER_URL = "https://twitter.com/defgames"
+export const TWITTER_URL = "https://x.com/defgames"
 export const INSTAGRAM_URL = "https://www.instagram.com/defgamesinc/"
 export const YOUTUBE_URL = "https://www.youtube.com/@defgamesinc"
 export const TIKTOK_URL = "https://www.tiktok.com/@def_games"
