@@ -1,36 +1,38 @@
-import {
-	BASE_URL,
-	INSTAGRAM_URL,
-	LINKEDIN_URL,
-	SITE_DESCRIPTION,
-	SITE_TITLE,
-	TIKTOK_URL,
-	TWITTER_URL,
-	YOUTUBE_URL,
-} from "../lib/const"
-import { Person, WebSite } from "schema-dts"
+import { BASE_URL, INSTAGRAM_URL, LINKEDIN_URL, TIKTOK_URL, TWITTER_URL, YOUTUBE_URL } from "../lib/const"
+import { Organization, Person, WithContext } from "schema-dts"
 
 const casey: Person = {
 	"@type": "Person",
 	name: "Casey Pugh",
-	description: "Co-founder",
-	url: ["https://www.caseypugh.com/", "https://twitter.com/caseypugh"],
+	sameAs: ["https://www.caseypugh.com/", "https://twitter.com/caseypugh"],
 }
 
 const charlie: Person = {
 	"@type": "Person",
 	name: "Charlie Tran",
-	description: "Co-founder",
-	url: ["https://www.charlietran.com/", "https://twitter.com/charlietran"],
+	sameAs: ["https://www.charlietran.com/", "https://twitter.com/charlietran"],
 }
 
-const websiteSchema: WebSite = {
-	"@type": "WebSite",
-	name: SITE_TITLE,
-	description: SITE_DESCRIPTION,
+const a16z: Organization = {
+	"@type": "Organization",
+	name: "Andreessen Horowitz",
+	sameAs: "https://en.wikipedia.org/wiki/Andreessen_Horowitz",
+}
+
+const snoot: Organization = {
+	"@type": "Organization",
+	name: "Snoot Entertainment",
+	sameAs: "https://www.snoot.com/",
+}
+
+const defSchema: WithContext<Organization> = {
+	"@context": "https://schema.org",
+	"@type": "Organization",
+	name: "Definitely Games",
 	url: BASE_URL,
 	sameAs: [TWITTER_URL, INSTAGRAM_URL, LINKEDIN_URL, YOUTUBE_URL, TIKTOK_URL],
-	author: [casey, charlie],
+	founder: [casey, charlie],
+	funder: [a16z, snoot],
 }
 
 // https://nextjs.org/docs/app/building-your-application/optimizing/metadata#json-ld
@@ -38,9 +40,9 @@ export default function StructuredSchema() {
 	return (
 		<>
 			<script
-				id="website-schema"
+				id="schema"
 				type="application/ld+json"
-				dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+				dangerouslySetInnerHTML={{ __html: JSON.stringify([defSchema]) }}
 			/>
 		</>
 	)
