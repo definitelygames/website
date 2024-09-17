@@ -86,12 +86,12 @@ export const SvgRingEmitter = ({ url, rotation, scale }: SvgParams) => {
 		// Force reset the lines when we adjust the spacing
 		if (spacing > 0) setMeshPoints(undefined)
 
+		setCount(90)
+
 		if (isSmallScreen) {
 			setSpacing(10)
-			setCount(85)
 		} else {
 			setSpacing(12)
-			setCount(85)
 		}
 	}, [isSmallScreen])
 

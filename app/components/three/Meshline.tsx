@@ -45,7 +45,7 @@ export default function Meshline({ points, time }: Props) {
 
 	const curve = useMemo(() => {
 		const adjustedPoints = points.map((point) => adjustDistanceByPosition(point, time, mouseFactor))
-		return new CatmullRomCurve3(adjustedPoints, false).getPoints(200).flatMap((point) => point.toArray())
+		return new CatmullRomCurve3(adjustedPoints, false).getPoints(150).flatMap((point) => point.toArray())
 	}, [points, time, mouseFactor])
 
 	const pointSample = points[0]
@@ -92,7 +92,7 @@ function adjustDistanceByPosition(point: Vector3, time: number, factor: MousePos
 	const direction = point.clone().normalize()
 	const distortedPoint = point.clone()
 
-	const xFactor = (factor.x - 0.5) * 6
+	const xFactor = (factor.x - 0.5) * 5
 	const yFactor = (factor.y - 0.5) * 60
 
 	// Calculate the radial distance of the point from the center (0,0)
