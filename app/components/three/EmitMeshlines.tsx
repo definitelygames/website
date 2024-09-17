@@ -3,21 +3,18 @@ import { useState } from "react"
 import { Vector3 } from "three"
 import Meshline from "./Meshline"
 
-export default function EmitMeshlines({
-	points,
-	count,
-	baseSpacing,
-	maxDistance,
-}: {
+interface Props {
 	points: Vector3[]
 	count: number
 	baseSpacing: number
-	maxDistance: number
-}) {
+}
+
+export default function EmitMeshlines({ points, count, baseSpacing }: Props) {
 	const [time, setTime] = useState(0) // New state to hold elapsed time
 	const [offsets, setOffsets] = useState<number[]>(() =>
 		Array.from({ length: count }, (_, i) => i * baseSpacing),
 	)
+	const maxDistance = count * baseSpacing
 
 	const generateOffsetPoints = (basePoints: Vector3[], offsetAmount: number) => {
 		return basePoints.map((point) => {

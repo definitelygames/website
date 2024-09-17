@@ -1,5 +1,5 @@
 "use client"
-import { useEffect, useState } from "react"
+import { CSSProperties, useEffect, useMemo, useState } from "react"
 import DefViz from "./components/DefViz"
 import EmailSignup from "./components/EmailSignup"
 import SocialIcons from "./components/SocialIcons"
@@ -9,16 +9,21 @@ import classNames from "./lib/classNames"
 
 export default function Home() {
 	const [ref, dimensions] = useResizeObserver()
-	const [className, setClassName] = useState<string>("place-content-center")
+	const [styles, setStyles] = useState<CSSProperties>()
 
 	useEffect(() => {
-		// fix for very wide and short screen sizes
-		const aspect = dimensions.width / dimensions.height
-
-		if (aspect > 1.6) {
-			setClassName("")
+		// shitty hack for very wide and short screen sizes
+		// probably could do this in css but I'm lazy
+		const windowAspect = window.innerWidth / window.innerHeight
+		const divWidth = window.innerHeight * (1252 / 900)
+		var padding = window.innerWidth - divWidth
+		if (windowAspect > 1.7) {
+			setStyles({
+				paddingLeft: `${padding / 2}px`,
+				paddingRight: `${padding / 2}px`,
+			})
 		} else {
-			setClassName("place-content-center")
+			setStyles({})
 		}
 	}, [dimensions])
 
@@ -26,9 +31,9 @@ export default function Home() {
 		<div
 			ref={ref}
 			className={classNames(
-				"mx-auto flex w-full max-w-[120rem] flex-col space-y-8 px-6 py-8 md:h-screen md:px-14",
-				className,
-			)}>
+				"mx-auto flex w-full max-w-[120rem] flex-col place-content-center space-y-8 px-6 pb-8 md:h-screen md:px-14 md:pb-0",
+			)}
+			style={styles}>
 			<div className="relative z-10 flex flex-row">
 				<div className="flex-1"></div>
 				<EmailSignup className="hidden w-[66%] md:inline-flex lg:w-[31.5%]" />
@@ -36,7 +41,7 @@ export default function Home() {
 
 			<DefViz />
 
-			<div className="relative z-10 flex flex-row place-items-center pb-8">
+			<div className="relative z-10 flex flex-row place-items-center">
 				<Tagline className="hidden w-2/3 md:block" />
 				<EmailSignup className="w-1/2 md:hidden" />
 				<div className="flex-1 md:hidden"></div>

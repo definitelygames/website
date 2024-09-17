@@ -26,14 +26,14 @@ export default function Meshline({
 	distanceFactor = Math.max(0, Math.min(1, distanceFactor))
 
 	// ease out the distance factor
-	distanceFactor = 1 - Math.pow(1 - distanceFactor, 2) * 1.4
+	distanceFactor = 1 - Math.pow(1 - distanceFactor, 2) * 1.6
 
 	// lerp color based on how close to 0,0 the point is
 	var color = interpolateColor("#1B0086", "#FF4F4F", distanceFactor)
 
 	// var texture = useTexture("/Group.png")
 	const { size } = useThree()
-	const maxLineWidth = 0.008
+	const maxLineWidth = 0.01
 	const minLineWidth = 0.006
 
 	const maxSize = 1000
@@ -45,14 +45,7 @@ export default function Meshline({
 	return (
 		<mesh>
 			<meshLineGeometry points={curve} />
-			<meshLineMaterial
-				color={color}
-				lineWidth={lineWidth}
-				// transparent
-				// resolution={new THREE.Vector2(window.innerWidth, window.innerHeight)}
-				// resolution={new THREE.Vector2(Math.round(size.height), Math.round(size.height + 1))}
-				resolution={new Vector2(2000, 1000)}
-			/>
+			<meshLineMaterial color={color} lineWidth={lineWidth} resolution={new Vector2(2000, 1000)} />
 		</mesh>
 	)
 }
