@@ -54,7 +54,7 @@ export default function Home() {
 					<Tagline className="hidden w-2/3 md:block" />
 					<EmailSignup className="w-1/2 md:hidden" />
 					<div className="flex-1 md:hidden"></div>
-					<div className="flex flex-col place-items-end space-y-3 md:flex-row md:place-items-center md:space-x-3 md:space-y-0">
+					<div className="flex w-full flex-col place-items-end space-y-3 md:flex-row md:space-x-3 md:space-y-0">
 						<SocialIcons className="w-28 place-content-end md:w-full" />
 						<div className="w-32 text-right leading-5">
 							A <FancyLink text="Casey" href="https://www.caseypugh.com" target="_blank" className="link" /> +{" "}
