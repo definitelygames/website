@@ -43,7 +43,7 @@ const MailchimpForm = ({ className, onSuccess }: FormProps) => {
 
 		try {
 			setPending(true)
-			const resp = await fetch(
+			await fetch(
 				"https://games.us8.list-manage.com/subscribe/post?u=b8ceb76496f682016133b8e5e&id=ffc17f3258&f_id=005c7ce0f0",
 				{
 					method: "POST",
@@ -54,7 +54,6 @@ const MailchimpForm = ({ className, onSuccess }: FormProps) => {
 					},
 				},
 			)
-			console.log(resp)
 			// it always errors bc we are doing weird CORS hacking, but it actually goes through
 			setEmail("")
 			onSuccess?.()
