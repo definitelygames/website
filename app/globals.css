@@ -51,7 +51,7 @@ input {
 }
 
 .link {
-  @apply text-primary border-b border-b-primary-alt transition-all hover:text-white hover:border-b-white;
+  @apply text-primary border-b border-b-primary-alt transition-all hover:border-b-transparent;
 }
 
 @layer utilities {
