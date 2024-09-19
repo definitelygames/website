@@ -3,12 +3,21 @@
 @tailwind utilities;
 
 :root {
-  --primary: #FF4F4F;
-  --primary-alt: rgba(255, 79, 79, 0.4);
-  --foreground: #FF4F4F;
+  --theme-1-primary: #FF4F4F;
+  --theme-1-primary-alt: #FF4F4F50;
+  --theme-1-secondary: #1B0086;
 
-  --background: #1B0086;
-  --secondary: #1B0086;
+  --theme-2-primary: #E6EDEB;
+  --theme-2-primary-alt: #E6EDEB50;
+  --theme-2-secondary: #02161E;
+
+  --theme-3-primary: #A41DF7;
+  --theme-3-primary-alt: #A41DF750;
+  --theme-3-secondary: #10F9B7;
+
+  --theme-4-primary: #F3E902;
+  --theme-4-primary-alt: #F3E90250;
+  --theme-4-secondary: #F6022C;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -18,7 +27,40 @@
   }
 }
 
-body {
+body, body.theme1 {
+  --primary: var(--theme-1-primary);
+  --primary-alt: var(--theme-1-primary-alt);
+  --secondary: var(--theme-1-secondary);
+  --foreground: var(--primary);
+  --background: var(--secondary);
+}
+
+body.theme2 {
+  --primary: var(--theme-2-primary);
+  --primary-alt: var(--theme-2-primary-alt);
+  --secondary: var(--theme-2-secondary);
+  --foreground: var(--primary);
+  --background: var(--secondary);
+}
+
+body.theme3 {
+  --primary: var(--theme-3-primary);
+  --primary-alt: var(--theme-3-primary-alt);
+  --secondary: var(--theme-3-secondary);
+  --foreground: var(--primary);
+  --background: var(--secondary);
+}
+
+body.theme4 {
+  --primary: var(--theme-4-primary);
+  --primary-alt: var(--theme-4-primary-alt);
+  --secondary: var(--theme-4-secondary);
+  --foreground: var(--primary);
+  --background: var(--secondary);
+}
+
+body,html {
+  @apply transition-colors duration-500;
   color: var(--foreground);
   background: var(--background);  
 }
@@ -47,7 +89,7 @@ html,body {
 }
 
 input {
-  @apply font-sans text-primary bg-secondary placeholder-primary-alt border-0 outline-none;
+  @apply font-sans text-primary bg-transparent placeholder-primary-alt border-0 outline-none;
 }
 
 .link {

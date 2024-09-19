@@ -1,7 +1,6 @@
-import Image from "next/image"
 import { FormEvent, useState } from "react"
-import arrow from "../images/right-arrow.svg"
 import classNames from "../lib/classNames"
+import Arrow from "./Arrow"
 
 interface Props {
 	className?: string
@@ -39,11 +38,12 @@ const MailchimpForm = ({ className, onSuccess }: FormProps) => {
 
 		const formData = new FormData()
 		formData.append("EMAIL", email)
+		formData.append("subscribe", "Subscribe")
 		formData.append("b_b8ceb76496f682016133b8e5e_ffc17f3258", "")
 
 		try {
 			setPending(true)
-			await fetch(
+			const resp = await fetch(
 				"https://games.us8.list-manage.com/subscribe/post?u=b8ceb76496f682016133b8e5e&id=ffc17f3258&f_id=005c7ce0f0",
 				{
 					method: "POST",
@@ -54,7 +54,7 @@ const MailchimpForm = ({ className, onSuccess }: FormProps) => {
 					},
 				},
 			)
-
+			console.log(resp)
 			// it always errors bc we are doing weird CORS hacking, but it actually goes through
 			setEmail("")
 			onSuccess?.()
@@ -76,12 +76,7 @@ const MailchimpForm = ({ className, onSuccess }: FormProps) => {
 				required
 			/>
 			<button type="submit">
-				<Image
-					src={arrow}
-					alt=""
-					width={13}
-					className={classNames("transition-opacity", pending ? "opacity-50" : "")}
-				/>
+				<Arrow className={classNames("w-[13px] transition-opacity", pending ? "opacity-50" : "")} />
 			</button>
 		</form>
 	)

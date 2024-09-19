@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss"
+import plugin from "tailwindcss/plugin"
 
 const config: Config = {
 	content: [
@@ -33,6 +34,13 @@ const config: Config = {
 			},
 		},
 	},
-	plugins: [],
+	plugins: [
+		plugin(({ addVariant }) => {
+			addVariant("theme1", ".theme1 &")
+			addVariant("theme2", ".theme2 &")
+			addVariant("theme3", ".theme3 &")
+			addVariant("theme4", ".theme4 &")
+		}),
+	],
 }
 export default config

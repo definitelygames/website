@@ -44,7 +44,7 @@ export default function RootLayout({
 				<link rel="preload" href="https://use.typekit.net/pne2lcw.css" as="style" />
 				<link rel="stylesheet" href="https://use.typekit.net/pne2lcw.css" />
 			</head>
-			<body className={`antialiased`}>{children}</body>
+			<body className={`theme1 antialiased`}>{children}</body>
 		</html>
 	)
 }

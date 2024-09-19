@@ -7,7 +7,6 @@ import Tagline from "./components/Tagline"
 import useResizeObserver from "./hooks/useResizeObserver"
 import classNames from "./lib/classNames"
 import StructuredSchema from "./components/StructuredSchema"
-import Link from "next/link"
 import FancyLink from "./components/FancyLink"
 
 export default function Home() {
