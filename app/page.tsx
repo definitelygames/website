@@ -7,6 +7,8 @@ import Tagline from "./components/Tagline"
 import useResizeObserver from "./hooks/useResizeObserver"
 import classNames from "./lib/classNames"
 import StructuredSchema from "./components/StructuredSchema"
+import Link from "next/link"
+import FancyLink from "./components/FancyLink"
 
 export default function Home() {
 	const [ref, dimensions] = useResizeObserver()
@@ -48,11 +50,18 @@ export default function Home() {
 
 				<DefViz />
 
-				<div className="relative z-10 flex flex-row place-items-center">
+				<div className="relative z-10 flex flex-row place-items-start md:place-items-center">
 					<Tagline className="hidden w-2/3 md:block" />
 					<EmailSignup className="w-1/2 md:hidden" />
 					<div className="flex-1 md:hidden"></div>
-					<SocialIcons className="w-28 place-content-end md:w-full" />
+					<div className="flex flex-col place-items-end space-y-3 md:flex-row md:place-items-center md:space-x-3 md:space-y-0">
+						<SocialIcons className="w-28 place-content-end md:w-full" />
+						<div className="w-32 text-right leading-5">
+							A <FancyLink text="Casey" href="https://www.caseypugh.com" target="_blank" className="link" /> +{" "}
+							<FancyLink text="Charlie" href="https://charlietran.com/" target="_blank" className="link" />{" "}
+							co.
+						</div>
+					</div>
 				</div>
 			</div>
 		</>

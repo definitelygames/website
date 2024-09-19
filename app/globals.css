@@ -23,8 +23,28 @@ body {
   background: var(--background);  
 }
 
+/** Infinite bounce animation */
+@keyframes linkbounce {
+  0% {
+    transform: translateY(0px);
+  }
+  25% {
+    transform: translateY(2px);
+  }
+  /* 50% {
+    transform: translateY(0px);
+  } */
+  75% {
+    transform: translateY(-2px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
 html,body {
-  @apply font-sans overflow-auto;}
+  @apply font-sans overflow-auto;
+}
 
 input {
   @apply font-sans text-primary bg-secondary placeholder-primary-alt border-0 outline-none;

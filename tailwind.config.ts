@@ -27,6 +27,10 @@ const config: Config = {
 			padding: {
 				center: "calc(50vw - 50vh)",
 			},
+			animation: {
+				// custom bounce
+				linkbounce: "linkbounce 0.75s infinite",
+			},
 		},
 	},
 	plugins: [],

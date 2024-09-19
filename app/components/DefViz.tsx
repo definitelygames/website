@@ -21,9 +21,15 @@ const DefViz = React.forwardRef<HTMLDivElement, Props>(({ className }, ref) => {
 				"relative z-0 mx-auto aspect-def-portrait w-full overflow-hidden md:aspect-def md:overflow-visible",
 				className,
 			)}>
-			<div className="t-0 absolute z-30 m-4 flex flex-col space-y-2 md:m-8 md:w-[15%]">
-				<Image src={defgames} alt="Definitely Games" className="w-3/7 md:w-full" draggable={false} priority />
-				<Tagline className="text-md leading-6 md:hidden" />
+			<div className="t-0 absolute z-30 m-4 flex w-full flex-col space-y-2 md:m-8 md:w-[15%]">
+				<Image
+					src={defgames}
+					alt="Definitely Games"
+					className="w-[39%] md:w-full"
+					draggable={false}
+					priority
+				/>
+				<Tagline className="text-md w-[45%] leading-6 md:hidden" />
 			</div>
 			<Image
 				src={gradientOverlayPortrait}
