@@ -1,5 +1,5 @@
 import { useFrame } from "@react-three/fiber"
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import { Vector3 } from "three"
 import Meshline from "./Meshline"
 
