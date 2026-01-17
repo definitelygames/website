@@ -1,5 +1,6 @@
 "use client"
 import { useState } from "react"
+import Link from "next/link"
 import DefinitelyGamesLogo from "../../components/DefinitelyGamesLogo"
 import { MailchimpForm } from "../../components/EmailSignup"
 import SocialIcons from "../../components/SocialIcons"
@@ -15,10 +16,10 @@ export default function GlitchPlaytestPage() {
 	}
 
 	return (
-		<div className="flex h-screen flex-col overflow-hidden bg-secondary px-6 py-6 md:py-8">
-			<div className="w-32 md:w-48">
+		<div className="flex h-dvh flex-col overflow-hidden bg-secondary px-6 py-6 md:py-8">
+			<Link href="/" className="w-32 md:w-48">
 				<DefinitelyGamesLogo />
-			</div>
+			</Link>
 
 			<div className="flex flex-1 flex-col items-center justify-center">
 				<div className="w-full max-w-md space-y-6 text-center md:space-y-8">
