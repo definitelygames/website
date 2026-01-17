@@ -10,10 +10,16 @@ import {
 	FaYoutube,
 } from "react-icons/fa6"
 
-export default function SocialIcons({ className }: { className?: string }) {
+interface Props {
+	className?: string
+	singleRow?: boolean
+}
+
+export default function SocialIcons({ className, singleRow = false }: Props) {
 	const iconClassName = "h-6 w-6 transition-all ease-out group-hover:-translate-y-1 cursor-pointer"
+	const layoutClass = singleRow ? "flex flex-row" : "grid grid-cols-3 md:flex md:flex-row"
 	return (
-		<div className={classNames("grid grid-cols-3 space-x-0 md:flex md:flex-row", className)}>
+		<div className={classNames(layoutClass, className)}>
 			<Link href="https://x.com/defgames" target="_blank" className="group relative w-10 p-2">
 				<FaTwitter className={classNames(iconClassName, "absolute opacity-0 group-hover:opacity-100")} />
 				<FaXTwitter className={classNames(iconClassName, "absolute group-hover:hidden")} />
