@@ -1,8 +1,8 @@
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-	title: "Glitch City Playtest 2026 | Definitely Games",
-	description: "Thanks for checking out our game at Glitch City! Sign up for updates.",
+	title: "High Spirited Playtest - Definitely Games",
+	description: "Thanks for checking out our game! Sign up for updates.",
 	robots: {
 		index: false,
 		follow: false,
