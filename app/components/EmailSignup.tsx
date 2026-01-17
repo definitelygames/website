@@ -62,10 +62,18 @@ export const MailchimpForm = ({
 				onChange={(e) => setEmail(e.target.value)}
 				placeholder={placeholder}
 				autoFocus={autoFocus}
+				data-1p-ignore
+				data-lpignore="true"
 				className={classNames("w-full transition-opacity", pending ? "opacity-50" : "")}
 				required
 			/>
-			<input type="text" name="b_b8ceb76496f682016133b8e5e_ffc17f3258" className="hidden" tabIndex={-1} value="" />
+			<input
+				type="text"
+				name="b_b8ceb76496f682016133b8e5e_ffc17f3258"
+				className="hidden"
+				tabIndex={-1}
+				value=""
+			/>
 			{tagId && <input type="hidden" name="tags" value={tagId} />}
 			<input type="submit" name="subscribe" className="hidden" value="Subscribe" tabIndex={-1} />
 			<button type="submit">
