@@ -26,7 +26,7 @@ export default function GlitchPlaytestPage() {
 					<div className="space-y-2 md:space-y-4">
 						<h1 className="text-2xl font-bold text-primary md:text-4xl">Thanks for playing with us at Glitch City!</h1>
 						<p className="text-primary/80 text-base md:text-lg">
-          <a class="link" href="https://discord.gg/kB9x5VdZ">Join our Discord</a> if you'd like to follow our progress and get into the next playtest.
+          <a class="link" href="https://discord.gg/kB9x5VdZ">Join our Discord</a> if you&apos;d like to follow our progress and get into the next playtest.
 						</p>
 						<p className="text-primary/80 text-base md:text-lg">
 							Or sign up for our company newsletter:
