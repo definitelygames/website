@@ -24,9 +24,12 @@ export default function GlitchPlaytestPage() {
 			<div className="flex flex-1 flex-col items-center justify-center">
 				<div className="w-full max-w-md space-y-6 text-center md:space-y-8">
 					<div className="space-y-2 md:space-y-4">
-						<h1 className="text-2xl font-bold text-primary md:text-4xl">Thanks for playing!</h1>
+						<h1 className="text-2xl font-bold text-primary md:text-4xl">Thanks for playing with us at Glitch City!</h1>
 						<p className="text-primary/80 text-base md:text-lg">
-							Sign up to get access to our Discord, game updates, and Steam keys.
+          <a class="link" href="https://discord.gg/kB9x5VdZ">Join our Discord</a> if you'd like to follow our progress and get into the next playtest.
+						</p>
+						<p className="text-primary/80 text-base md:text-lg">
+							Or sign up for our company newsletter:
 						</p>
 					</div>
 
