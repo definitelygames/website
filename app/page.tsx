@@ -6,7 +6,6 @@ import SocialIcons from "./components/SocialIcons"
 import Tagline from "./components/Tagline"
 import useResizeObserver from "./hooks/useResizeObserver"
 import classNames from "./lib/classNames"
-import StructuredSchema from "./components/StructuredSchema"
 import FancyLink from "./components/FancyLink"
 
 export default function Home() {
@@ -34,7 +33,6 @@ export default function Home() {
 
 	return (
 		<>
-			<StructuredSchema />
 			<div
 				ref={ref}
 				className={classNames(

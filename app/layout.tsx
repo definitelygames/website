@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import "./globals.css"
 import { BASE_URL, GOOGLE_TAG_MANAGER_ID, SITE_DESCRIPTION, SITE_TITLE } from "./lib/const"
 import { GoogleTagManager } from "@next/third-parties/google"
+import StructuredSchema from "./components/StructuredSchema"
 
 const title = SITE_TITLE
 const description = SITE_DESCRIPTION
@@ -45,7 +46,10 @@ export default function RootLayout({
 				<link rel="stylesheet" href="https://use.typekit.net/pne2lcw.css" />
 				<link rel="canonical" href={BASE_URL} />
 			</head>
-			<body className={`theme1 antialiased`}>{children}</body>
+			<body className={`theme1 antialiased`}>
+				<StructuredSchema />
+				{children}
+			</body>
 		</html>
 	)
 }
