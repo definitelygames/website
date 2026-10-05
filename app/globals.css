@@ -93,7 +93,8 @@ input {
 }
 
 .link {
-  @apply text-primary border-b border-b-primary-alt transition-all hover:border-b-transparent;
+  @apply text-primary border-b transition-all hover:border-b-transparent;
+  border-bottom-color: color-mix(in srgb, var(--primary) 40%, transparent);
 }
 
 @layer utilities {
