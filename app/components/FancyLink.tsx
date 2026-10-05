@@ -22,7 +22,7 @@ export default function FancyLink({ href, text, className, target }: Props) {
 							animationTimingFunction: "ease-out",
 							animationDelay: `${index * 75}ms`,
 						}}>
-						{char}
+						{char === " " ? "\u00A0" : char}
 					</span>
 				)
 			})}
